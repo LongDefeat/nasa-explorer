@@ -1,0 +1,29 @@
+body {
+    background-color: #222;
+    background-image: 
+      radial-gradient(ellipse, #fff 1px, transparent 3px);
+
+  
+    background-size: 150px 150px, 75px 75px;
+    background-position: 0 0, 37.5px 37.5px;
+  
+    animation: twinkling 1.5s infinite alternate;
+}
+  
+  
+/* key frames */
+
+@keyframes twinkling {
+    0% {
+      opacity: 0.98;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.98;
+    }
+  }
+  
+  
+  
