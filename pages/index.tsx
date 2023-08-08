@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import nasaConfig from '../config';
 import styles from './Home.module.css';
+import StarryBackground from '../components/StarryBackground';
 
 const HomePage: NextPage = () => {
   const [data, setData] = useState(null);
@@ -25,6 +26,8 @@ const HomePage: NextPage = () => {
   }, []);
 
   return (
+    <>
+    <StarryBackground />
     <div className={styles.container}>
       <h1 className={styles.intro}>Welcome to the NASA Explorer</h1>
       {data && (
@@ -35,6 +38,7 @@ const HomePage: NextPage = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
