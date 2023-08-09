@@ -1,3 +1,16 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+  
+.homeButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+} 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -77,4 +90,51 @@
     background-color: #969fa3;
     color:rgba(0, 0, 0, 0.851)
 }
+ 
+.homeButton {
+    background: radial-gradient(circle, #0077B6, #34D399); /* Blue to Green gradient */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; /* Makes it round */
+    width: 50px; /* Control width */
+    height: 50px; /* Control height */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow to give it depth */
+    transition: transform 0.s; /* smooth transform effect on hover */
+  
+    /* Centering the text in the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
+  .homeButton:hover {
+    animation: shake 0.9s;
+    transform: scale(1.2); /* Enlarges the button slightly when hovered */
+}
+  
   
