@@ -1,13 +1,22 @@
+// External Libraries and Type Imports
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+// Internal Component and Config Imports
 import nasaConfig from '../config';
-import styles from './Home.module.css';
 import StarryBackground from '../components/StarryBackground';
+
+// Styles Import
+import styles from './Home.module.css';
 
 const HomePage: NextPage = () => {
   const [data, setData] = useState(null);
+  const [query, setQuery] = useState('');
+  const router = useRouter();
 
+  // Fetch NASA Photo of the Day on mount
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,19 +34,34 @@ const HomePage: NextPage = () => {
     fetchData();
   }, []);
 
+  const handleSearch = async (event: React.FormEvent) => {
+    event.preventDefault();
+    router.push(`/SearchResults?query=${query}`);
+  };
+
   return (
     <>
-    <StarryBackground />
-    <div className={styles.container}>
-      <h1 className={styles.intro}>Welcome to the NASA Explorer</h1>
-      {data && (
-        <div>
-          <h2 className={styles.title}>{data.title}</h2>
-          <img src={data.url} alt={data.title} className={styles.photo}/>
-          <p className={styles.explanation}>{data.explanation}</p>
-        </div>
-      )}
-    </div>
+      <StarryBackground />
+      <div className={styles.container}>
+        <form onSubmit={handleSearch} className={styles.searchForm}>
+          <input 
+            type="text" 
+            placeholder="Search NASA's photo library..." 
+            value={query} 
+            onChange={(e) => setQuery(e.target.value)}
+            className={styles.searchInput}
+          />
+          <button type="submit" className={styles.searchButton}>Explore</button>
+        </form>
+        <h1 className={styles.intro}>Welcome to the NASA Explorer</h1>
+        {data && (
+          <div>
+            <h2 className={styles.title}>{data.title}</h2>
+            <img src={data.url} alt={data.title} className={styles.photo} />
+            <p className={styles.explanation}>{data.explanation}</p>
+          </div>
+        )}
+      </div>
     </>
   );
 };

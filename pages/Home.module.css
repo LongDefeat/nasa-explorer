@@ -41,3 +41,37 @@
   text-align: justify;
   margin-top: 15px;
 }
+
+/* ... Your existing styles ... */
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.searchInput {
+  padding: 10px;
+  font-size: 1rem;
+  flex: 1; 
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.searchButton {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #668973;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #5e7568;
+}
+

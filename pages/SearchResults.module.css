@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e2125; /* Dark gray, slightly darker than the main page */
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+.photo {
+    display: block;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(220, 220, 220, 0.5);
+    margin: 20px auto;
+}
+  
+  /* Styling for individual result cards */
+.resultCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #2c2f33;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.resultCard img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+  
+.resultTitle {
+    font-size: 1.4rem;
+    color: #f7f7f7;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.resultDescription {
+    color: #cfd1d4; /* Light gray */
+    margin-top: 10px;
+}
+  
+.pagination {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.prevPage,
+.nextPage {
+    padding: 10px 20px;
+    margin: 0 px;
+    background-color: #2c2f33;
+    color: #cfd1d4;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.prevPage:hover,
+.nextPage:hover {
+    background-color: #969fa3;
+    color:rgba(0, 0, 0, 0.851)
+}
+  
