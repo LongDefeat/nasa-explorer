@@ -42,7 +42,30 @@
   margin-top: 15px;
 }
 
-/* ... Your existing styles ... */
+/* Mars Rover Slide Gallery */
+
+.marsTitle{
+  color: rgb(225, 108, 85);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-decoration: underline;
+}
+
+.roverImage {
+  max-width: 90%;
+  min-height: 90%;
+  margin: 0 auto; /* Center the image horizontally within the slide */
+  display: block;
+}
+
+.slideshowContainer {
+  width: 70%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+/* Search Bar */
 
 .searchForm {
   display: flex;
